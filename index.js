@@ -5,11 +5,11 @@ const app     = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const db = require('./app/modles/')
+const db = require('./app/modeles/')
 db.mongoose.connect(db.url, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: true
+  useUnifiedTopology: true
+  //useFindAndModify: true
 }).then(() => {
   console.log(`Connected To RGateway Database`)
 }).catch((err) => {
